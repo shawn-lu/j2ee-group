@@ -17,6 +17,13 @@
 		<mybatis.version>3.2.8</mybatis.version>
 		<mybatis-spring.version>1.2.2</mybatis-spring.version>
 		<commons-dbcp.version>1.4</commons-dbcp.version>
+		<!-- database -->
+		<mysql.version>5.1.38</mysql.version>
+		<!-- log -->
+		<log4j2.version>2.4.1</log4j2.version>
+		<slf4j.version>1.7.13</slf4j.version>
+		<!-- test -->
+		<junit.version>4.11</junit.version>
 	</properties>
 	<dependencies>
 		<!-- SPRING begin -->
@@ -25,12 +32,12 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>${spring.version}</version>
-	<!-- 		<exclusions>
+			<exclusions>
 				<exclusion>
 					<groupId>commons-logging</groupId>
 					<artifactId>commons-logging</artifactId>
 				</exclusion>
-			</exclusions> -->
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -51,6 +58,11 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
 		<!-- spring tx -->
@@ -108,12 +120,56 @@
             <artifactId>spring-orm</artifactId>
             <version>${spring.version}</version>
         </dependency>
+		<!-- Mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+		</dependency>
         <!-- common dbcp-->
         <dependency>
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
             <version>${commons-dbcp.version}</version>
         </dependency>
+        <!-- log -->
+        <!-- Logging use log4j2-->  
+        <dependency>  
+            <groupId>org.slf4j</groupId>  
+            <artifactId>slf4j-api</artifactId>  
+            <version>${slf4j.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.slf4j</groupId>  
+            <artifactId>jcl-over-slf4j</artifactId>  
+            <version>${slf4j.version}</version>  
+            <scope>runtime</scope>  
+        </dependency>  
+  
+        <!--核心log4j2jar包-->  
+        <dependency>  
+            <groupId>org.apache.logging.log4j</groupId>  
+            <artifactId>log4j-api</artifactId>  
+            <version>${log4j2.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.apache.logging.log4j</groupId>  
+            <artifactId>log4j-core</artifactId>  
+            <version>${log4j2.version}</version>  
+        </dependency>  
+        <!--用于与slf4j保持桥接-->  
+        <dependency>  
+            <groupId>org.apache.logging.log4j</groupId>  
+            <artifactId>log4j-slf4j-impl</artifactId>  
+            <version>${log4j2.version}</version>  
+        </dependency>  
+        <!--web工程需要包含log4j-web，非web工程不需要-->  
+        <dependency>  
+            <groupId>org.apache.logging.log4j</groupId>  
+            <artifactId>log4j-web</artifactId>  
+            <version>${log4j2.version}</version>  
+            <scope>runtime</scope>  
+        </dependency>  
         <!-- test -->
         <dependency>
             <groupId>junit</groupId>

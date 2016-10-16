@@ -10,9 +10,6 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
             classpath*:/applicationContext.xml
-            classpath*:/applicationContext-shiro.xml
-            classpath*:/applicationContext-hadoop.xml
-            classpath*:/applicationContext-quartz.xml
         </param-value>
 	</context-param>
 
@@ -28,10 +25,10 @@
 	</listener>
 
 
-<!-- 	<!-- 该监听器主要定时任务(Quartz)、OpenSessionInViewFilter等引起的内存泄露 ?-->
+	<!-- 该监听器主要定时任务(Quartz)、OpenSessionInViewFilter等引起的内存泄露 ?-->
 	<listener>
 		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
-	</listener> -->
+	</listener>
 
 	<!-- Character Encoding filter -->
 	<filter>
@@ -104,16 +101,6 @@
 	<servlet-mapping>
 		<servlet-name>springServlet</servlet-name>
 		<url-pattern>/</url-pattern>
-	</servlet-mapping>
-
-	<!-- DruidStatView -->
-	<servlet>
-		<servlet-name>DruidStatView</servlet-name>
-		<servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>DruidStatView</servlet-name>
-		<url-pattern>/druid/*</url-pattern>
 	</servlet-mapping>
 
 	<!-- session超时定义,单位为分钟 -->

@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
-<mapper namespace="" >
-  
+<mapper namespace="user">
+	<select id="selectUsers" resultType="com.shawn.ssm.system.domain.User">
+		select * from t_sys_user
+	</select>
+	<insert id="insertUser" parameterType="com.shawn.ssm.system.domain.User">
+		insert into t_sys_user (id,username,password,birthday)
+		values (#{id},#{username},#{password},#{birthday})
+	</insert>
 </mapper>

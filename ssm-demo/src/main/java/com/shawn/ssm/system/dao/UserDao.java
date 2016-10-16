@@ -9,6 +9,10 @@
 
 package com.shawn.ssm.system.dao;
 
+import java.util.List;
+
+import com.shawn.ssm.system.domain.User;
+
 /**
  * ClassName: UserDao <br/>
  * Date: 2016年10月3日 下午3:18:04 <br/>
@@ -19,6 +23,8 @@ package com.shawn.ssm.system.dao;
  * @see
  */
 public interface UserDao {
-
+	public List<User> selectUsers();
+	
+	public void insertUser(User user); 
 }
 
