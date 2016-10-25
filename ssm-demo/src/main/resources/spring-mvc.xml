@@ -23,13 +23,15 @@
 	<!-- <bean id="stopWatchHandlerInterceptor" class="com.micmiu.mvc.ferriswheel.support.spring.web.StopWatchHandlerInterceptor"/> -->
 
 	<!-- log Interceptor -->
-	<!-- <bean id="logHandlerInterceptor" class="com.micmiu.mvc.ferriswheel.support.spring.web.LogHandlerInterceptor"/> -->
+	<bean id="logHandlerInterceptor" class="com.shawn.ssm.system.interceptor.LogHandlerInterceptor" />
 	<!--Spring3.1 之后的注解 HandlerMapping -->
 	<bean
 		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
-		<!-- <property name="interceptors"> <list> <ref bean="localeChangeInterceptor"/> 
-			<ref bean="stopWatchHandlerInterceptor"/> <ref bean="logHandlerInterceptor"/> 
-			</list> </property> -->
+		<property name="interceptors">
+			<list>
+				<ref bean="logHandlerInterceptor" />
+			</list>
+		</property>
 		<property name="order" value="1"></property>
 	</bean>
 
@@ -48,6 +50,7 @@
 			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"> 
 			<property name="objectMapper" ref="dateObjectMapper"></property> </bean> 
 			</list> </property> -->
+			<property name="synchronizeOnSession"  value="true"></property>
 	</bean>
 
 
