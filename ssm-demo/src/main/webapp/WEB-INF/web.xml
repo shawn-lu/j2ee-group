@@ -86,7 +86,16 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
  -->
-
+ 
+	<servlet>
+		<servlet-name>testServlet</servlet-name>
+		<servlet-class>com.shawn.ssm.system.servlet.TestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>testServlet</servlet-name>
+		<url-pattern>/testServlet</url-pattern>
+	</servlet-mapping>
+	
 
 	<!-- Spring MVC Servlet -->
 	<servlet>
